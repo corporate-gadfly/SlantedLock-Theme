@@ -276,7 +276,7 @@ function doSetup() {
     })
 }
 function init() {
-    var myDB = openDatabase("SlantedLockCache", '1.0', "Slanted Lock Cache", 65536);
+    var myDB = openDatabase("SlantedLockCache", '1.0', "Slanted Lock Cache", 64 * 1024);
     gblObj.systemDB = myDB;
     doSetup()
 }
