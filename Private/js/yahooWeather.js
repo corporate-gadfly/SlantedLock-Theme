@@ -37,17 +37,17 @@ var codeDescriptions = {
     34: {name: 'Fair',                      icon: 'mist'},
     35: {name: 'Mixed Rain and Hail',       icon: 'hail'},
     36: {name: 'Hot',                       icon: 'sunny'},
-    37: {name: 'Isolated Thunderstorms',    icon:'tstorm1'},
-    38: {name: 'Scattered Thunderstorms',   icon:	'tstorm2'},
-    39: {name: 'Scattered Thunderstorms',   icon:	'tstorm2'},
+    37: {name: 'Isolated Thunderstorms',    icon: 'tstorm1'},
+    38: {name: 'Scattered Thunderstorms',   icon: 'tstorm2'},
+    39: {name: 'Scattered Thunderstorms',   icon: 'tstorm2'},
     40: {name: 'Scattered Showers',         icon: 'tstorm2'},
     41: {name: 'Heavy Snow',                icon: 'snow5'},
-    42: {name: 'Scattered Snow Showers',    icon:'snow3'},
+    42: {name: 'Scattered Snow Showers',    icon: 'snow3'},
     43: {name: 'Heavy Snow',                icon: 'snow5'},
     44: {name: 'Partly Cloudy',             icon: 'cloudy1'},
     45: {name: 'Thundershowers',            icon: 'storm1'},
     46: {name: 'Snow showers',              icon: 'snow2'},
-    47: {name: 'Isolated Thundershowers',   icon:	'tstorm1'},
+    47: {name: 'Isolated Thundershowers',   icon: 'tstorm1'},
     3200: {name: 'Not Available',           icon: 'dunno'}
 }
 
