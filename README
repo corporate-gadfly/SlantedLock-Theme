@@ -1,0 +1,67 @@
+This is a customization of Roux84's iOS5 compatible SlantedLock code.
+http://modmyi.com/forums/general-iphone-chat/788766-slantedlock-ios5-compatible.html
+
+Roux84 in turn customized it from Claude626:
+http://forums.macrumors.com/showthread.php?t=1006066
+
+SlantedLock v1.5.4
+==================
+
+INSTALLATION INSTRUCTIONS
+-------------------------
+
+You MUST follow these installation to make the theme work.
+Theme will show BLACK SCREEN if these set up steps are not completed.
+
+Theme requires:
+"Winterboard"
+"file:// for MobileSafari" module from Cydia(free)
+"LockScreen Clock Hide" -- or any other plugin/module that hides the default clock.
+
+
+1) Download and install "file:// for MobileSafari" from Cydia.
+This will enable you to access the configuration screen.
+
+
+2) Open Safari and type in this:
+file:///Library/Themes/SlantedLock.theme/config.html
+
+BOOKMARK this link so you can return to this page on Safari anytime to make configuration changes!
+
+3) Enable SlantedLock in Winterboard.  Now enjoy!
+
+4 Change Background:
+  Replace bg.jpg wich is located at Themes/SlantedLock.theme/Private/images/bg.jpg
+
+NOTE: It may take a few seconds to initialize on first time.
+
+------------------------------------------
+
+USAGE
+----------
+All configurations are done in the config.html file via Safari.  Configurations should be self explanatory. Here are additional information for the ones that don't may be confusing:
+
+YahooWeather WOEID:
+This is how Yahoo identifies your location. Go here and find weather for your location/city (http://weather.yahoo.com/), when it is showing weather for your location, look at the URL in the address bar for the last numbers in it.  That is your WOEID.  Example, WOEID for London, UK is 44418 in this URL: http://weather.yahoo.com/england/greater-london/london-44418/
+
+AccuWeather Zip Code:
+In case your zip code is not valid to AccuWeather, please use YahooWeather as source.
+
+Icon Set:
+This is your weather icon.  The last field is for your custom set.  This field takes the name of the folder that your icons are in.  All images should be named the same as the corresponding icons in the other sets.  The file type is png.
+
+Wallpaper Set:
+"Default" will use the wallpaper you set in Settings.(the official Apple settings on your phone) You will need to respring everytime you change your wallpaper this way.
+"24hr" is a set of 24 images representing per hour.
+The last field is for your custom set.  Put the name of the folder into this field.  Your set must contain 24 different images named from 0-23, where 0 represents midnight.  You may have duplicated images with different names if you don't have 24 unique images, but you MUST have all 0-23 named files.  The file type is jpg.
+
+Style Sheet:
+This field defaults to the SlantedLock style.  However, if you've written or received a different compatible CSS file, you may specify its file name here to use it instead.
+
+------------------------------------------
+
+The above method of using "file:// for MobileSafari" to set up the database belongs to a user name "bost" in his post here: http://modmyi.com/forums/iphone-2g-3g-3gs-ipod-touch-1g-2g-3g-new-skins-themes-launches/690532-w-dapanel-interactive-weather-lockscreen-22.html#post5422758
+
+I extended from this idea and added configuration panel to the page.
+
+All credit on this configuration approach goes to "bost" for finding the idea!

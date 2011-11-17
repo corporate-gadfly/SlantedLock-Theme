@@ -1,0 +1,359 @@
+body {
+
+	font-family: Arial, Helvetica, sans-serif;
+
+	margin: 0;
+
+	padding:0;
+
+	height: 480px;
+
+	width: 320px;
+
+	background: url("/private/var/mobile/Library/SpringBoard/LockBackground.jpg") #000;
+
+	background-size: 61%;
+
+	color:#FFF;
+
+	text-shadow:3px 3px 7px #000000;
+
+}
+
+
+
+img#custombkg{
+
+	position:absolute;
+
+	margin:0;
+
+	height: 480px;
+
+	width: 320px;
+
+	z-index:0;
+
+}
+
+
+
+div#content {
+
+	position:absolute;
+
+	-webkit-transform: rotate(-30deg);
+
+	left:20px;
+
+	top:150px;
+
+}
+
+
+
+div#timecluster {
+
+	position:absolute;
+
+	text-align:center;
+
+	top:30px;
+
+	left:-95px;
+
+	color:#fff;
+
+	clear:left;
+
+	width:360px;
+
+	opacity:.8;
+
+}
+
+div#hourbox {
+
+	text-align:right;
+
+	position:relative;
+
+	font-size:155px;
+
+	letter-spacing:-5px;
+
+	margin-right:15px;
+
+	font-weight:bold;
+
+}
+
+div#minutebox {
+
+	position:relative;
+
+	font-size:155px;
+
+	letter-spacing:-5px;
+
+	margin-left:15px;
+
+	font-weight:bold;
+
+}
+
+div#secondsbox {
+
+	position:relative;
+
+	font-size:10px;
+
+	text-align:center;
+
+	width:15px;
+
+	height:15px;
+
+	line-height:15px;
+
+	background-color:#fff;
+
+	color:#fff;
+
+	text-shadow:none;
+
+	z-index:2;
+
+	margin:20px 0 20px 0;
+
+	-webkit-box-shadow:3px 3px 7px #000000;
+
+}
+
+div#ampmbox {
+
+	position:relative;
+
+	font-size:8px;
+
+	text-align:center;
+
+	width:15px;
+
+	height:15px;
+
+	line-height:15px;
+
+	background-color:#FFF;
+
+	color:#fff;
+
+	text-shadow:none;
+
+	z-index:2;
+
+	margin: 0;
+
+	-webkit-box-shadow:3px 3px 7px #000000;
+
+}
+
+
+
+div#datecluster {
+
+	position:absolute;
+
+	top:180px;
+
+	left:-150px;
+
+	width:380px;
+
+	height:180px;
+
+}
+
+div#dateinner {
+
+	position:absolute;
+
+	top:53px;
+
+	left:55px;
+
+	width:300px;
+
+	height:90px;
+
+}
+
+div#monthbox {
+
+	position:absolute;
+
+	top:-54px;
+
+	left:-53px;
+
+	color:#0CC6E7;
+
+	font-size:60px;
+
+	font-weight:bold;
+
+	opacity:0.3;
+
+	width:370px;
+
+	text-align:center;
+
+}
+
+div#daybox {
+
+	position:relative;
+
+	float:left;
+
+	padding:0;
+
+	color:#ffdd93;
+
+	font-size:20px;
+
+	opacity:0.7;
+
+	width:135px;
+
+	text-align:right;
+
+}
+
+
+
+div#datebox {
+
+	position:relative;
+
+	float:left;
+
+	margin:-35px 0 0 0;
+
+	font-size:80px;
+
+	opacity:0.8;
+
+	text-align:center;
+
+}
+
+div#yearbox {
+
+	position:relative;
+
+	float:left;
+
+	margin:0 0 0 3px;
+
+	font-size:20px;
+
+	color:#fff;
+
+	opacity:.4;
+
+}
+
+
+
+/*WEATHER*/
+
+#weathercluster{
+
+	position:absolute;
+
+	top:30px;
+
+	left:-30px;
+
+	width:480px;
+
+	height:24px;
+
+	text-align:center;
+
+}
+
+
+
+#weathercluster div{
+
+	float:left;
+
+	padding: 0;
+
+	margin: 0 0 0 10px;
+
+}
+
+
+
+#location{
+
+	text-transform: capitalize;
+
+	font-weight: bold;
+
+	font-size:12px;
+
+	color:#ffdd93;
+
+	opacity:0.7;
+
+}
+
+#temp{
+
+	font-size:24px;
+
+	line-height:6px;
+
+	opacity:0.8;
+
+}
+
+
+
+#desc{
+
+	text-transform: capitalize;
+
+	font-size:12px;
+
+	color:#0CC6E7;
+
+	opacity:0.7;
+
+}
+
+
+
+#weatherIcon{
+
+	position:absolute;
+
+	height: 128px;
+
+	width: 128px;
+
+	border: none;
+
+	top:-130px;
+
+	left:40px;
+
+	opacity:0.7;
+
+	z-index:2;
+
+}
