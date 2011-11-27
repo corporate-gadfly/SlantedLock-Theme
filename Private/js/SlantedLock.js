@@ -135,7 +135,6 @@ function fetchWeatherData() {
     xml_request.open("GET", url + "&bustCache=" + Math.random());
     xml_request.setRequestHeader("Cache-Control", "no-cache");
     xml_request.send(null);
-    return xml_request
 }
 function findChild(element, nodeName) {
     var child;
