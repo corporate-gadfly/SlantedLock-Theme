@@ -184,12 +184,15 @@ function doTime() {
     var d = new Date();
     var se = d.getSeconds();
     document.getElementById('secondsbox').innerHTML = (se < 10) ? '0' + se : se;
-    if (se === 0 || parseInt(document.getElementById('minutebox').innerHTML, 10) != d.getMinutes()) {
+    var minuteBox = document.getElementById('minutebox');
+    if (se === 0 || parseInt(minuteBox.innerHTML, 10) != d.getMinutes()) {
         var mn = d.getMinutes();
-        var nowhr = parseInt(document.getElementById('hourbox').innerHTML, 10);
-        document.getElementById('minutebox').innerHTML = (mn < 10) ? '0' + mn : mn;
-        if (mn === 0 || (nowhr != d.getHours() && nowhr != Math.abs(12 - d.getHours()))) {
-            var hr = bkg = d.getHours();
+        var hourBox = document.getElementById('hourbox');
+        var nowhr = parseInt(hourBox.innerHTML, 10);
+        minuteBox.innerHTML = (mn < 10) ? '0' + mn : mn;
+        var hour = d.getHours();
+        if (mn === 0 || (nowhr != hour && nowhr != Math.abs(12 - hour))) {
+            var hr = bkg = hour;
             var am_pm = 'PM';
             if (gblObj.use24hours == false) {
                 if (hr < 12) {
@@ -210,17 +213,18 @@ function doTime() {
                     hr = '0' + hr
                 }
             }
-            document.getElementById('hourbox').innerHTML = hr;
+            hourBox.innerHTML = hr;
             document.getElementById('ampmbox').innerHTML = am_pm;
             if (gblObj.bkgset != "default") {
                 document.getElementById("custombkg").src = "images/" + gblObj.bkgset + "/" + bkg + ".jpg"
             }
-            if (hr === 0 || parseInt(document.getElementById('datebox').innerHTML, 10) != d.getDate()) {
+            var dateBox = document.getElementById('datebox');
+            if (hr === 0 || parseInt(dateBox.innerHTML, 10) != d.getDate()) {
                 var armonth = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
                 var arday = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
                 document.getElementById('daybox').innerHTML = arday[d.getDay()].toUpperCase();
                 document.getElementById('monthbox').innerHTML = armonth[d.getMonth()].toUpperCase();
-                document.getElementById('datebox').innerHTML = d.getDate();
+                dateBox.innerHTML = d.getDate();
                 document.getElementById('yearbox').innerHTML = d.getFullYear()
             }
         }
