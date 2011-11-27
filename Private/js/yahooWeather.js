@@ -61,7 +61,7 @@ function xml_loaded(request) {
         var weatherCode = conditionTag.getAttribute('code').toLowerCase();
         dsc = codeDescriptions[weatherCode].name;
         icn = "images/" + gblObj.iconSet + "/" + codeDescriptions[weatherCode].icon + gblObj.iconExt;
-        doweather(loc, tmp, dsc, icn);
+        doWeather(loc, tmp, dsc, icn);
         var nowtime = new Date();
         var nextupdate = new Date(nowtime.getTime() + (60000 * gblObj.updateInterval));
         updateDB(loc, tmp, dsc, icn, nextupdate.getTime());

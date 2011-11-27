@@ -113,7 +113,7 @@ var gblObj = {
     updateInterval: 15,
     bkgset: "default"
 };
-function doweather(l, t, d, i) {
+function doWeather(l, t, d, i) {
     document.getElementById("weathercluster").innerHTML = '<img id="weatherIcon" src="images/' + gblObj.iconSet + '/dunno' + gblObj.iconExt + '"/><div id="location">noCache</div><div id="temp">?&deg;F</div><div id="desc">noCache</div>';
     document.getElementById("location").innerHTML = l;
     document.getElementById("temp").innerHTML = t;
@@ -154,7 +154,7 @@ function doWeatherCheck(isOnline, loc, temp, desc, icon, updtime, updint) {
     if ((isOnline) && ((updtime === 0) || (nowtime.getTime() >= updtime))) {
         fetchWeatherData()
     } else {
-        doweather(loc, temp, desc, icon);
+        doWeather(loc, temp, desc, icon);
         var nextupdate = updtime - nowtime.getTime();
         if (updtime < nowtime.getTime()) {
             nextupdate = new Date(nowtime.getTime() + (60000 * updint))
@@ -179,8 +179,8 @@ function fetchWeatherCache(loc, temp, desc, icon, updtime, updint) {
     };
     xmlhttp.send(null)
 }
-function dotime() {
-    setTimeout(dotime, 1000);
+function doTime() {
+    setTimeout(doTime, 1000);
     var d = new Date();
     var se = d.getSeconds();
     document.getElementById('secondsbox').innerHTML = (se < 10) ? '0' + se : se;
@@ -257,7 +257,7 @@ function configHandler(transaction, results) {
                 document.getElementsByTagName("body")[0].removeChild(bkgimg)
             }
         }
-        dotime();
+        doTime();
         if (cached.source != "none") {
             var scriptNode = document.createElement('script');
             scriptNode.type = 'text/javascript';
