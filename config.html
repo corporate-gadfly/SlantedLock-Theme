@@ -20,7 +20,8 @@ function initDB() {
        The first time the application is run, it will CREATE the table and
        INSERT a single row in it. On subsequent runs, the CREATE statement
        fails because the table exists already, so the following INSERT
-       statement is never attempted.
+       statement is never attempted (since the CREATE/INSERT statements are
+       in a transaction).
        */
     db.transaction(function (transaction) {
         transaction.executeSql('CREATE TABLE slcache (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, location TEXT NOT NULL, temp TEXT NOT NULL, desc TEXT NOT NULL, icon TEXT NOT NULL, updatetime INTEGER NOT NULL, source TEXT NOT NULL, woeid TEXT NOT NULL, zipcode TEXT NOT NULL, useRealFeel INTEGER NOT NULL, useCelcius INTEGER NOT NULL, use24hours INTEGER NOT NULL, stylesheet TEXT NOT NULL, iconset TEXT NOT NULL, updateInterval INTEGER NOT NULL DEFAULT 30, bkgset TEXT NOT NULL);', [], nullDataHandler);
