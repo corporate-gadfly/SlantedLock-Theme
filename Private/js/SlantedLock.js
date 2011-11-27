@@ -269,16 +269,13 @@ function configHandler(transaction, results) {
         }
     }
 }
-function doSetup() {
+function init() {
+    var myDB = openDatabase("SlantedLockCache", '1.0', "Slanted Lock Cache", 64 * 1024);
+    gblObj.systemDB = myDB;
     var db = gblObj.systemDB;
     db.transaction(function (transaction) {
         transaction.executeSql("SELECT * FROM slcache WHERE name='slcache';", [], configHandler)
     })
-}
-function init() {
-    var myDB = openDatabase("SlantedLockCache", '1.0', "Slanted Lock Cache", 64 * 1024);
-    gblObj.systemDB = myDB;
-    doSetup()
 }
 function updateDB(loc, tmp, dsc, icn, updtime) {
     var db = gblObj.systemDB;
