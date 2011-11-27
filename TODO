@@ -1,0 +1,4 @@
+* use jquery.simpleWeather
+* use jquery
+* allow clicking on weather layer to see Current, Today, Tomorrow weather
+* enable lang support
