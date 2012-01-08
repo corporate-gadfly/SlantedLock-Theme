@@ -24,21 +24,14 @@ function initDB() {
        in a transaction).
        */
     db.transaction(function (transaction) {
-        transaction.executeSql('CREATE TABLE slcache (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, location TEXT NOT NULL, temp TEXT NOT NULL, desc TEXT NOT NULL, icon TEXT NOT NULL, updatetime INTEGER NOT NULL, source TEXT NOT NULL, woeid TEXT NOT NULL, zipcode TEXT NOT NULL, useRealFeel INTEGER NOT NULL, useCelcius INTEGER NOT NULL, use24hours INTEGER NOT NULL, stylesheet TEXT NOT NULL, iconset TEXT NOT NULL, updateInterval INTEGER NOT NULL DEFAULT 30, bkgset TEXT NOT NULL);', [], nullDataHandler);
-        transaction.executeSql('INSERT INTO slcache (name, location, temp, desc, icon, updatetime, source, woeid, zipcode, useRealFeel, useCelcius, use24hours, stylesheet, iconset, updateInterval, bkgset) VALUES ("slcache", "noCache", "?&deg;F", "noCache", "images/tick/dunno.png", 0, "yahooWeather", "2408784", "92843", 1, 0, 0, "SlantedLock", "tick", 30, "slbkg24hr");', [], nullDataHandler)
+        transaction.executeSql('CREATE TABLE slcache (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, name TEXT NOT NULL, location TEXT NOT NULL, temp TEXT NOT NULL, desc TEXT NOT NULL, icon TEXT NOT NULL, updatetime INTEGER NOT NULL, woeid TEXT NOT NULL, zipcode TEXT NOT NULL, useRealFeel INTEGER NOT NULL, useCelcius INTEGER NOT NULL, use24hours INTEGER NOT NULL, stylesheet TEXT NOT NULL, iconset TEXT NOT NULL, updateInterval INTEGER NOT NULL DEFAULT 30, bkgset TEXT NOT NULL);', [], nullDataHandler);
+        transaction.executeSql('INSERT INTO slcache (name, location, temp, desc, icon, updatetime, woeid, zipcode, useRealFeel, useCelcius, use24hours, stylesheet, iconset, updateInterval, bkgset) VALUES ("slcache", "noCache", "?&deg;F", "noCache", "images/tick/dunno.png", 0, "2408784", "92843", 1, 0, 0, "SlantedLock", "tick", 30, "slbkg24hr");', [], nullDataHandler)
     })
 }
 function configHandler(transaction, results) {
     for (var i = 0; i < results.rows.length; i++) {
         var cached = results.rows.item(i);
         var fcontent = "";
-        if (cached.source == "none") {
-            fcontent += '<p>Weather Source:<br/><input type="radio" name="source" value="none" checked /> None <input type="radio" name="source" value="yahooWeather" /> YahooWeather <input type="radio" name="source" value="accuWeather"/> AccuWeather</p>'
-        } else if (cached.source == "yahooWeather") {
-            fcontent += '<p>Weather Source:<br/><input type="radio" name="source" value="none" /> None <input type="radio" name="source" value="yahooWeather" checked /> YahooWeather <input type="radio" name="source" value="accuWeather"/> AccuWeather</p>'
-        } else {
-            fcontent += '<p>Weather Source:<br/><input type="radio" name="source" value="none" /> None <input type="radio" name="source" value="yahooWeather" /> YahooWeather <input type="radio" name="source" value="accuWeather" checked /> AccuWeather</p>'
-        }
         fcontent += '<p>YahooWeather WOEID: <input id="woeid" type="text" name="woeid" value="' + cached.woeid + '"/></p>';
         fcontent += '<p>AccuWeather Zip Code: <input id="zip" type="text" name="zipcode" value="' + cached.zipcode + '"/></p>';
         fcontent += (cached.useRealFeel == 1) ? '<p>AccuWeather use Real Feel:<br/><input type="radio" name="realfeel" value="1" checked /> Yes <input type="radio" name="realfeel" value="0"/> No</p>' : '<p>AccuWeather use Real Feel:<br/><input type="radio" name="realfeel" value="1"/> Yes <input type="radio" name="realfeel" value="0" checked /> No</p>';
